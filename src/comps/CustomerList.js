@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
 import Button from '@mui/material/Button';
 import AddCustomer from './AddCustomer';
 import EditCustomer from './EditCustomer';
+import { CSVLink } from 'react-csv';
 
 function Customerlist() {
 
@@ -77,17 +78,32 @@ function Customerlist() {
     {
       headerName: "",
       field: "links",
-      cellRenderer: function(field){  
-          return <Button variant="outlined" color="secondary" onClick={() => deleteCustomer(field.value[0].href,field.data)} >delete</Button>
+      cellRenderer: function (field) {
+        return <Button variant="outlined" color="secondary" onClick={() => deleteCustomer(field.value[0].href, field.data)} >delete</Button>
       },
       width: 150,
     }
+  ];
+
+  const headers = [
+    { label: "Firstname", key: "firstname" },
+    { label: "Lastname", key: "lastname" },
+    { label: "Email", key: "email" },
+    { label: "Phone", key: "phone" },
+    { label: "City", key: "city" },
+    { label: "Streetaddress", key: "streetaddress" },
+    { label: "Postcode", key: "postcode" }
   ];
 
   return (
     <div className="ag-theme-material"
       style={{ height: '900px', width: '100%', margin: 'center' }} >
       <AddCustomer saveCustomer={saveCustomer} />
+      <CSVLink headers={headers} data={customers} filename="Customers" style={{ textDecoration: 'none' }}>
+        <Button variant="outlined" color="primary">
+          Download Customers
+        </Button>
+      </CSVLink>
       <AgGridReact rowData={customers} columnDefs={columns}></AgGridReact>
     </div>
   );
