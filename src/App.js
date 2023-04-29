@@ -1,9 +1,11 @@
+import React from 'react';
 import './App.css';
 import CustomerList from './comps/CustomerList';
 import TrainingList from './comps/TrainingList';
-import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
-import { AppBar,Toolbar, Typography } from '@mui/material';
-import Button from'@mui/material/Button';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 function App() {
   return (
@@ -16,16 +18,14 @@ function App() {
         </Toolbar>
       </AppBar>
       <Router>
-           <div>
+        <div>
 
-                <Button href="/">Customers</Button>
+          <Button href="/">Customers</Button>
+          <Route exact path='/' element={< CustomerList />}></Route>
+          <Route exact path='/trainings/:id' element={< TrainingList />}></Route>
 
-           <Routes>
-                  <Route exact path='/' element={< CustomerList />}></Route>
-                  <Route exact path='/trainings/:id' element={< TrainingList />}></Route>
-          </Routes>
-          </div>
-       </Router>
+        </div>
+      </Router>
 
 
     </div>

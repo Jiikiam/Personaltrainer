@@ -1,7 +1,7 @@
 {
   "name": "personaltrainer",
-  "version": "0.2.0",
-  "private": false,
+  "version": "0.3.0",
+  "private": true,
   "homepage": "https://Jiikiam.github.io/Peronaltrainer",
   "dependencies": {
     "@emotion/react": "^11.10.6",
