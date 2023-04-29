@@ -1,7 +1,7 @@
 import './App.css';
-import Customerlist from './comps/CustomerList';
-import Traininglist from './comps/TrainingList';
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import CustomerList from './comps/CustomerList';
+import TrainingList from './comps/TrainingList';
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import { AppBar,Toolbar, Typography } from '@mui/material';
 import Button from'@mui/material/Button';
 
@@ -21,8 +21,8 @@ function App() {
                 <Button href="/">Customers</Button>
 
            <Routes>
-                  <Route exact path='/' element={< Customerlist />}></Route>
-                  <Route exact path='/trainings/:id' element={< Traininglist />}></Route>
+                  <Route exact path='/' element={< CustomerList />}></Route>
+                  <Route exact path='/trainings/:id' element={< TrainingList />}></Route>
           </Routes>
           </div>
        </Router>
