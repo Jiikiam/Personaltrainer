@@ -5,7 +5,6 @@ import TrainingList from './comps/TrainingList';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
 function App() {
   return (
