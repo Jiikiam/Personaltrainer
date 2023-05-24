@@ -20,9 +20,10 @@ function App() {
         <div>
 
           <Button href="/">Customers</Button>
+          <Routes>
           <Route exact path='/' element={< CustomerList />}></Route>
           <Route exact path='/trainings/:id' element={< TrainingList />}></Route>
-
+          </Routes>
         </div>
       </Router>
 
