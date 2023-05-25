@@ -21,8 +21,8 @@ function App() {
 
           <Button href="/">Customers</Button>
           <Routes>
-          <Route exact path='/' element={< CustomerList />}></Route>
-          <Route exact path='/trainings/:id' element={< TrainingList />}></Route>
+            <Route exact path='/' element={< CustomerList />}></Route>
+            <Route exact path='/trainings/:id' element={< TrainingList />}></Route>
           </Routes>
         </div>
       </Router>
